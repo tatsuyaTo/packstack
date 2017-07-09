@@ -310,11 +310,11 @@ CONFIG_MARIADB_HOST=153.126.163.13
 CONFIG_MARIADB_USER=root
 
 # Password for the MariaDB administrative user.
-CONFIG_MARIADB_PW=99618c99d2e34e4b
+CONFIG_MARIADB_PW=df5b80c55ca94a25
 
 # Password to use for the Identity service (keystone) to access the
 # database.
-CONFIG_KEYSTONE_DB_PW=eb4f7fafd2f8440d
+CONFIG_KEYSTONE_DB_PW=158997966da14159
 
 # Enter y if cron job for removing soft deleted DB rows should be
 # created.
@@ -325,7 +325,7 @@ CONFIG_KEYSTONE_DB_PURGE_ENABLE=True
 CONFIG_KEYSTONE_REGION=RegionOne
 
 # Token to use for the Identity service API.
-CONFIG_KEYSTONE_ADMIN_TOKEN=555b94839f9e409b98bda09322b254e8
+CONFIG_KEYSTONE_ADMIN_TOKEN=110d76677c3e4268b17513ce611fe732
 
 # Email address for the Identity service 'admin' user.  Defaults to
 CONFIG_KEYSTONE_ADMIN_EMAIL=root@localhost
@@ -335,10 +335,10 @@ CONFIG_KEYSTONE_ADMIN_EMAIL=root@localhost
 CONFIG_KEYSTONE_ADMIN_USERNAME=admin
 
 # Password to use for the Identity service 'admin' user.
-CONFIG_KEYSTONE_ADMIN_PW=a7b46e89d85e4d72
+CONFIG_KEYSTONE_ADMIN_PW=eb97725016b340b9
 
 # Password to use for the Identity service 'demo' user.
-CONFIG_KEYSTONE_DEMO_PW=522377d69ca045e8
+CONFIG_KEYSTONE_DEMO_PW=a4aadaaae58c4ad5
 
 # Identity service API version string. ['v2.0', 'v3']
 CONFIG_KEYSTONE_API_VERSION=v3
@@ -521,11 +521,11 @@ CONFIG_KEYSTONE_LDAP_TLS_REQ_CERT=demand
 
 # Password to use for the Image service (glance) to access the
 # database.
-CONFIG_GLANCE_DB_PW=d24a40bbe9274aaa
+CONFIG_GLANCE_DB_PW=0b4164e07bf846f5
 
 # Password to use for the Image service to authenticate with the
 # Identity service.
-CONFIG_GLANCE_KS_PW=7cd85ac8d78240f6
+CONFIG_GLANCE_KS_PW=3cf105ebff8f4795
 
 # Storage backend for the Image service (controls how the Image
 # service stores disk images). Valid options are: file or swift
@@ -536,7 +536,7 @@ CONFIG_GLANCE_BACKEND=file
 
 # Password to use for the Block Storage service (cinder) to access
 # the database.
-CONFIG_CINDER_DB_PW=e9bffc28f3114e36
+CONFIG_CINDER_DB_PW=5fc43e213ac44a01
 
 # Enter y if cron job for removing soft deleted DB rows should be
 # created.
@@ -544,7 +544,7 @@ CONFIG_CINDER_DB_PURGE_ENABLE=True
 
 # Password to use for the Block Storage service to authenticate with
 # the Identity service.
-CONFIG_CINDER_KS_PW=78fb355f1a3f4d5f
+CONFIG_CINDER_KS_PW=b43f2ad00adf4632
 
 # Storage backend to use for the Block Storage service; valid options
 # are: lvm, gluster, nfs, vmdk, netapp, solidfire. ['lvm', 'gluster',
@@ -722,11 +722,11 @@ CONFIG_NOVA_DB_PURGE_ENABLE=True
 
 # Password to use for the Compute service (nova) to access the
 # database.
-CONFIG_NOVA_DB_PW=3b5511710c924549
+CONFIG_NOVA_DB_PW=dbdd9ae0c5fb45b7
 
 # Password to use for the Compute service to authenticate with the
 # Identity service.
-CONFIG_NOVA_KS_PW=1ea61a8ab7ad46ea
+CONFIG_NOVA_KS_PW=1954999a3690496f
 
 # Whether or not Packstack should manage a default initial set of
 # Nova flavors. Defaults to 'y'.
@@ -777,11 +777,11 @@ CONFIG_NOVA_LIBVIRT_VIRT_TYPE=%{::default_hypervisor}
 
 # Password to use for OpenStack Networking (neutron) to authenticate
 # with the Identity service.
-CONFIG_NEUTRON_KS_PW=b075c00a2fe94830
+CONFIG_NEUTRON_KS_PW=85d61f25477748a0
 
 # The password to use for OpenStack Networking to access the
 # database.
-CONFIG_NEUTRON_DB_PW=d7d08666b52f4876
+CONFIG_NEUTRON_DB_PW=9754d666f6284938
 
 # The name of the Open vSwitch bridge (or empty for linuxbridge) for
 # the OpenStack Networking L3 agent to use for external  traffic.
@@ -790,7 +790,7 @@ CONFIG_NEUTRON_DB_PW=d7d08666b52f4876
 CONFIG_NEUTRON_L3_EXT_BRIDGE=br-ex
 
 # Password for the OpenStack Networking metadata agent.
-CONFIG_NEUTRON_METADATA_PW=2f24987c5a3e436a
+CONFIG_NEUTRON_METADATA_PW=447b2084dc37440b
 
 # Specify 'y' to install OpenStack Networking's Load-Balancing-
 # as-a-Service (LBaaS). ['y', 'n']
@@ -1082,7 +1082,7 @@ CONFIG_MANILA_GLUSTERFS_GANESHA_SERVER_IP=
 CONFIG_HORIZON_SSL=n
 
 # Secret key to use for Horizon Secret Encryption Key.
-CONFIG_HORIZON_SECRET_KEY=60df335a85a949519548ef9330d60cdf
+CONFIG_HORIZON_SECRET_KEY=5f50618e0226475fba9e16d523f629bb
 
 # PEM-encoded certificate to be used for SSL connections on the https
 # server. To generate a certificate, leave blank.
@@ -1096,7 +1096,7 @@ CONFIG_HORIZON_SSL_CACERT=
 
 # Password to use for the Object Storage service to authenticate with
 # the Identity service.
-CONFIG_SWIFT_KS_PW=dfcb13495cff4263
+CONFIG_SWIFT_KS_PW=027e1bc90f6049a7
 
 # Comma-separated list of devices to use as storage device for Object
 # Storage. Each entry must take the format /path/to/dev (for example,
@@ -1120,7 +1120,7 @@ CONFIG_SWIFT_STORAGE_FSTYPE=ext4
 # Custom seed number to use for swift_hash_path_suffix in
 # /etc/swift/swift.conf. If you do not provide a value, a seed number
 # is automatically generated.
-CONFIG_SWIFT_HASH=6cbfbbab195f49de
+CONFIG_SWIFT_HASH=820b1183f49b478c
 
 # Size of the Object Storage loopback file storage device.
 CONFIG_SWIFT_STORAGE_SIZE=2G
@@ -1131,7 +1131,7 @@ CONFIG_HEAT_DB_PW=PW_PLACEHOLDER
 
 # Encryption key to use for authentication in the Orchestration
 # database (16, 24, or 32 chars).
-CONFIG_HEAT_AUTH_ENC_KEY=7cdb94c6eafb46ec
+CONFIG_HEAT_AUTH_ENC_KEY=7606a3828c4f48e8
 
 # Password to use for the Orchestration service to authenticate with
 # the Identity service.
@@ -1221,18 +1221,18 @@ CONFIG_RUN_TEMPEST_TESTS=smoke
 CONFIG_PROVISION_OVS_BRIDGE=y
 
 # Password to use for Gnocchi to access the database.
-CONFIG_GNOCCHI_DB_PW=42086798021140a6
+CONFIG_GNOCCHI_DB_PW=84544354b7a4446a
 
 # Password to use for Gnocchi to authenticate with the Identity
 # service.
-CONFIG_GNOCCHI_KS_PW=a0975936b6cf4674
+CONFIG_GNOCCHI_KS_PW=fe9ac7936bfc42e4
 
 # Secret key for signing Telemetry service (ceilometer) messages.
-CONFIG_CEILOMETER_SECRET=8f2165aa4b7345a7
+CONFIG_CEILOMETER_SECRET=81fbf3abdbf14ebf
 
 # Password to use for Telemetry to authenticate with the Identity
 # service.
-CONFIG_CEILOMETER_KS_PW=a867685f62054b3b
+CONFIG_CEILOMETER_KS_PW=752cbd6d026644f9
 
 # Ceilometer service name. ['httpd', 'ceilometer']
 CONFIG_CEILOMETER_SERVICE_NAME=httpd
@@ -1258,11 +1258,11 @@ CONFIG_REDIS_PORT=6379
 
 # Password to use for Telemetry Alarming to authenticate with the
 # Identity service.
-CONFIG_AODH_KS_PW=04ac5e990701475e
+CONFIG_AODH_KS_PW=f4a8127a0ca24a29
 
 # Password to use for Telemetry Alarming (AODH) to access the
 # database.
-CONFIG_AODH_DB_PW=90bb0e7e05ad443e
+CONFIG_AODH_DB_PW=4114f0eeb03e4573
 
 # Password to use for Panko to access the database.
 CONFIG_PANKO_DB_PW=PW_PLACEHOLDER
