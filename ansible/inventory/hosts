@@ -1,10 +1,9 @@
 [controller]
-192.168.1.1
+153.126.153.37
 
 [compute]
-192.168.1.2
-192.168.1.3
+153.126.153.40
+153.126.153.39
 
 [all:vars]
 ansible_ssh_user=root
-ansible_ssh_pass=password
