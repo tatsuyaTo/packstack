@@ -1,0 +1,24 @@
+- hosts: targets
+  user: root
+  tasks:
+    - name: update packages from yum
+      yum: name=* state=latest
+
+    - name: disable NetworkManager.service
+      systemd:
+        name: NetworkManager.service
+        state: stopped
+        daemon_reload: no
+        enabled: no
+
+    - name: disable firewalld.service
+      systemd:
+        name: firewalld.service
+        state: stopped
+        daemon_reload: no
+        enabled: no
+
+    - name: disable selinux
+      selinux:
+        state: disabled
+

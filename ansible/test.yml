@@ -1,7 +1,0 @@
-- hosts: targets
-  user: root
-  tasks:
-    - name: install packages from yum
-      yum: name={{ item }} state=latest
-      with_items:
-        - openstack-utils
