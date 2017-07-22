@@ -21,3 +21,13 @@
         name: openstack-packstack
         state: latest
 
+    - name: Get the packstack answer-file from GitHub
+      git:
+        repo: https://github.com/tatsuyaTo/packstack.git
+        dest: /tmp/checkout
+        version: ocata
+        force: yes
+
+    - name: Install OpenStack with PackStack
+      command: packstack --allinone
+
