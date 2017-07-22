@@ -7,3 +7,16 @@
 
 [all:vars]
 ansible_ssh_user=root
+
+[controller:vars]
+config_controller_host=153.126.153.37
+config_compute_hosts=153.126.153.40,153.126.153.39
+config_network_hosts=153.126.153.37
+config_vcenter_host=
+config_storage_host=153.126.153.37
+config_sahara_host=153.126.153.37
+config_amqp_host=153.126.153.37
+config_mariadb_host=153.126.153.37
+config_tempest_host=
+config_mongodb_host=153.126.153.37
+config_redis_host=153.126.153.37
