@@ -21,6 +21,11 @@
         name: openstack-packstack
         state: latest
 
+    - name: Install openstack-utils
+      yum:
+        name: openstack-utils
+        state: latest
+
     - name: Generate packstack answer-file
       command: packstack --gen-answer-file=/tmp/answer-file.txt
 
