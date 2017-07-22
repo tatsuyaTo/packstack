@@ -1,15 +1,15 @@
 - hosts: controller, compute
   user: root
   tasks:
+    - name: set /etc/environment
+      command: echo "LANG=en_US.utf-8" > /etc/environment;echo "LC_ALL=en_US.utf-8" >> /etc/environment
+
     - name: update packages from yum
       yum: name=* state=latest
 
-    - name: disable NetworkManager.service
-      systemd:
-        name: NetworkManager.service
-        state: stopped
-        daemon_reload: no
-        enabled: no
+    - name: disable selinux
+      selinux:
+        state: disabled
 
     - name: disable firewalld.service
       systemd:
@@ -18,7 +18,17 @@
         daemon_reload: no
         enabled: no
 
-    - name: disable selinux
-      selinux:
-        state: disabled
+    - name: disable NetworkManager.service
+      systemd:
+        name: NetworkManager.service
+        state: stopped
+        daemon_reload: no
+        enabled: no
+
+    - name: enable network.service
+      systemd:
+        name: network.service
+        state: started
+        daemon_reload: no
+        enabled: yes
 

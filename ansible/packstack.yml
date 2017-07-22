@@ -1,0 +1,23 @@
+- hosts: controller
+  user: root
+  tasks:
+    - name: Download and install RDO repository
+      yum:
+        name: https://rdoproject.org/repos/rdo-release.rpm
+        state: present
+
+    - name: Install centos-release-openstack-ocata
+      yum:
+        name: centos-release-openstack-ocata
+        state: latest
+
+    - name: Update package from yum
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install openstack-packstack
+      yum:
+        name: openstack-packstack
+        state: latest
+
