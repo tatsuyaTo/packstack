@@ -1,0 +1,100 @@
+- hosts: controller
+  user: root
+  tasks:
+    - name: Download and install RDO repository
+      yum:
+        name: https://rdoproject.org/repos/rdo-release.rpm
+        state: present
+
+    - name: Install centos-release-openstack-ocata
+      yum:
+        name: centos-release-openstack-ocata
+        state: latest
+
+    - name: Update package from yum
+      yum:
+        name: '*'
+        state: latest
+
+    - name: Install openstack-packstack
+      yum:
+        name: openstack-packstack
+        state: latest
+
+    - name: Install openstack-utils
+      yum:
+        name: openstack-utils
+        state: latest
+
+    - name: Generate packstack answer-file
+      command: packstack --gen-answer-file=/tmp/answer-file.txt
+
+    - name: Replace CONFIG_CONTROLLER_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_CONTROLLER_HOST=.*$'
+        replace: "CONFIG_CONTROLLER_HOST={{ config_controller_host }}"
+
+    - name: Replace CONFIG_COMPUTE_HOSTS
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_COMPUTE_HOSTS=.*$'
+        replace: "CONFIG_COMPUTE_HOSTS={{ config_compute_hosts }}"
+
+    - name: Replace CONFIG_NETWORK_HOSTS
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_NETWORK_HOSTS=.*$'
+        replace: "CONFIG_NETWORK_HOSTS={{ config_network_hosts }}"
+
+    - name: Replace CONFIG_VCENTER_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_VCENTER_HOST=.*$'
+        replace: "CONFIG_VCENTER_HOST={{ config_vcenter_host }}"
+
+    - name: Replace CONFIG_STORAGE_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_STORAGE_HOST=.*$'
+        replace: "CONFIG_STORAGE_HOST={{ config_storage_host }}"
+
+    - name: Replace CONFIG_SAHARA_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_SAHARA_HOST=.*$'
+        replace: "CONFIG_SAHARA_HOST={{ config_sahara_host }}"
+
+    - name: Replace CONFIG_AMQP_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_AMQP_HOST=.*$'
+        replace: "CONFIG_AMQP_HOST={{ config_amqp_host }}"
+
+    - name: Replace CONFIG_MARIADB_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_MARIADB_HOST=.*$'
+        replace: "CONFIG_MARIADB_HOST={{ config_mariadb_host }}"
+
+    - name: Replace CONFIG_TEMPEST_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_TEMPEST_HOST=.*$'
+        replace: "CONFIG_TEMPEST_HOST={{ config_tempest_host }}"
+
+    - name: Replace CONFIG_MONGODB_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_MONGODB_HOST=.*$'
+        replace: "CONFIG_MONGODB_HOST={{ config_mongodb_host }}"
+
+    - name: Replace CONFIG_REDIS_HOST
+      replace:
+        path: /tmp/answer-file.txt
+        regexp: '^CONFIG_REDIS_HOST=.*$'
+        replace: "CONFIG_REDIS_HOST={{ config_redis_host }}"
+
+    - name: Install openstack with packstack
+      command: packstack --answer-file=/tmp/answer-file.txt
+

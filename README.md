@@ -14,3 +14,21 @@ https://www.openstack.org/software/
 ## Install
 `ansible-playbook -i inventory/hosts init_node.yml`  
 `ansible-playbook -i inventory/hosts packstack.yml`
+
+## Add CirrOS instance
+`openstack server create \
+    --flavor FLAVOR_ID \
+    --image IMAGE_ID \
+    --key-name KEY_NAME \
+    --user-data USER_DATA_FILE \
+    --security-group SEC_GROUP_NAME \
+    --property KEY=VALUE \
+    INSTANCE_NAME`
+
+`openstack server create \
+    --flavor m1.small \
+    --image cirros \
+    --nic net-id=internal \
+    --security-group default \
+    cirros_third`
+
