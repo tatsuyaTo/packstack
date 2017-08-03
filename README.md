@@ -2,6 +2,7 @@
 
 ## Reference
 https://www.openstack.org/software/
+https://www.rdoproject.org/
 
 ## Install ansible
 `yum install -y ansible`
