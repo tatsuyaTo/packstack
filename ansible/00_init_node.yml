@@ -21,9 +21,9 @@
     - name: disable NetworkManager.service
       systemd:
         name: NetworkManager.service
-        state: stopped
+        state: started
         daemon_reload: no
-        enabled: no
+        enabled: yes
 
     - name: enable network.service
       systemd:
